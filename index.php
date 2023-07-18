@@ -50,17 +50,32 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Elenco Hotel</h1>
+<div class="container">
+        <h1>Elenco Hotel</h1>
 
-    <?php foreach ($hotels as $hotel) : ?>
-        <div>
-            <h2><?php echo $hotel['name']; ?></h2>
-            <p><?php echo $hotel['description']; ?></p>
-            <p>Parcheggio: <?php echo $hotel['parking'] ? 'si' : 'no'; ?></p>
-            <p>Voto: <?php echo $hotel['vote']; ?></p>
-            <p>Distanza dal centro: <?php echo $hotel['distance_to_center']; ?> km</p>
-        </div>
-        <hr>
-    <?php endforeach; ?>
+        <table class="table table-hover table-bordered table-dark">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrizione</th>
+                    <th>Parcheggio</th>
+                    <th>Voto</th>
+                    <th>Distanza dal centro (km)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($hotels as $hotel) : ?>
+                    <tr>
+                        <td><?php echo $hotel['name']; ?></td>
+                        <td><?php echo $hotel['description']; ?></td>
+                        <td><?php echo $hotel['parking'] ? 'Si' : 'No'; ?></td>
+                        <td><?php echo $hotel['vote']; ?></td>
+                        <td><?php echo $hotel['distance_to_center']; ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</body>
 </body>
 </html>
